@@ -65,7 +65,7 @@ def create_generators(args):
 def get_losses(args):
     return {'yolo_loss': lambda y_true, y_pred: y_pred}
 
-def postprocess_output(output, shape):
+def postprocess_output(output, shape, args):
     classes_path = '../keras_yolov3/model_data/coco_classes.txt'
     anchors_path = '../keras_yolov3/model_data/yolo_anchors.txt'
     class_names = get_classes(classes_path)
@@ -87,3 +87,6 @@ def postprocess_output(output, shape):
     model = keras.models.Model(input_layer, model_eval)
 
     return model.predict_on_batch(output)
+
+def show_result(img_path, y_pred_thresh, args):
+    return 0

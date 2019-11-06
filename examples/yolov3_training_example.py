@@ -9,8 +9,7 @@ from yolk.parser import parse_args
 import keras
 
 def main(args=None):
-    if args is None:
-        args = []
+    args = []
 
     model = yolk.detector.load_training_model(80, args)
 

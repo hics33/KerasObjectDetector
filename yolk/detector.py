@@ -1,20 +1,23 @@
 from . import backend as M
 
-def load_inference_model(path, args):
+def load_inference_model(path, *args):
     return M.load_inference_model(path, args)
 
-def load_training_model(num_classes, args):
+def load_training_model(num_classes, *args):
     return M.load_training_model(num_classes, args)
 
-def preprocessing_image(image, args):
+def preprocessing_image(image, *args):
     return M.preprocess_image(image, args)
 
-def get_data_generator(args):
+def get_data_generator(*args):
     train_generator, validation_generator = M.create_generators(args)
     return train_generator
 
+def postprocessing_output(output, shape, *args):
+    return M.postprocess_output(output, shape, args)
+
 def get_losses(args):
     return M.get_losses(args)
-
-def postprocessing_output(output, shape):
-    return M.postprocess_output(output, shape)
+     
+def show_result(img_path, threshold, *args):
+    return M.show_result(img_path, threshold, args)

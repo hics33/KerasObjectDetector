@@ -1,15 +1,14 @@
 import sys, os
-
 sys.path.insert(0, os.path.abspath('..'))
-import yolk
 from PIL import Image
-
-# import miscellaneous modules
 import matplotlib.pyplot as plt
 import cv2
 import numpy as np
+import yolk
+from yolk.parser import parse_args
 
-def main():
+
+def main(args=None):
     args = []
 
     image = Image.open('000000008021.jpg')
