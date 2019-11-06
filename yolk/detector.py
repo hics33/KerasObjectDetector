@@ -13,11 +13,10 @@ def get_data_generator(*args):
     train_generator, validation_generator = M.create_generators(args)
     return train_generator
 
-def prostprocessing_image(model_output, *args):
-    #bbox ,score ,~  = .prostprocessing_image(model_output)
-    return 1#bbox ,score ,~ 
+def postprocessing_output(output, shape, *args):
+    return M.postprocess_output(output, shape, args)
 
-def get_losses(*args):
+def get_losses(args):
     return M.get_losses(args)
      
 def show_result(img_path, threshold, *args):

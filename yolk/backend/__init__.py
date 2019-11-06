@@ -5,3 +5,6 @@ from .load_backend import preprocess_image
 from .load_backend import get_losses
 from .load_backend import create_generators
 from .load_backend import show_result
+
+if backend() == 'yolov3':
+    from .load_backend import postprocess_output
